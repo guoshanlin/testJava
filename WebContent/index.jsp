@@ -15,7 +15,8 @@
 <body>
 	<h2>这是一个测试页面</h2>
 	<%
-	     List<Students> student =new StudentsSearch().finStudents();
+	     String sql="SELECT * FROM `guoguoblog` WHERE age >? AND name LIKE ? order by age asc";
+	     List<Students> student =new StudentsSearch().finStudents(sql,20,"na");
 		 pageContext.setAttribute("student", student);
    %>
 	<div>
